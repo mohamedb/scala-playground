@@ -13,9 +13,9 @@ object Fib01 extends App {
     println(s"Fib 7:  " + fibTwo(7) + " should be: 13")
     println(s"Fib 8:  " + fibTwo(8) + " should be: 21")
     println(s"Fib 9:  " + fibTwo(9) + " should be: 34")
-    println(s"Fib 10:  " + fibTwo(10) + " should be: 55")
+    println(Utils.formatResult("FibTwo", 10, fibTwo))
 
-    println(s"\n -----\n Fib2 10:  " + fib(10) + " should be: 55")
+    println(Utils.formatResult("fib ", 10, fib))
   }
 
   /**
@@ -26,6 +26,7 @@ object Fib01 extends App {
     * @return
     */
   def fib(n: Int): Int = {
+    @annotation.tailrec
     def go(v: Int, p1: Int, p0: Int): Int = {
       if (v == 0) p0
       else if (v == 1) p1
@@ -43,6 +44,7 @@ object Fib01 extends App {
     * @return
     */
   def fibTwo(n: Int): Int = {
+    @annotation.tailrec
     def go(lim: Int, v: Int, prev_1: Int, prev_2: Int): Int = {
       if (v == lim - 2) prev_1 + prev_2
       else go(lim, v + 1, prev_1 + prev_2, prev_1)
@@ -77,6 +79,7 @@ object Fib01 extends App {
     * @return
     */
   def factAccum(n: Int): Int = {
+    @annotation.tailrec
     def go(n: Int, acc: Int): Int = {
       if (n <= 1) acc
       else go(n - 1, acc * n)
