@@ -43,8 +43,9 @@ object Sorted02 extends App {
     */
   def isSortedPolymorphic[A](arr: Array[A], f: (A, A) => Boolean): Boolean = {
     def go(i: Int, so: Boolean): Boolean = {
-      if (!so) return so
+      if (!so) return so /* return from outer function too !*/
       if (i == arr.length - 1) return true
+      /* final element, if we manage to reach here, we are done! */
       val a = arr(i)
       var b = arr(i)
       if (i < arr.length) b = arr(i + 1)
