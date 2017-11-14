@@ -1,3 +1,5 @@
+package main
+
 object Partial04 extends App {
   override def main(args: Array[String]): Unit = {
     /** Un petit exemple pour tester */

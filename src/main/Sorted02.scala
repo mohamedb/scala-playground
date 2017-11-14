@@ -1,3 +1,5 @@
+package main
+
 object Sorted02 extends App {
   override def main(args: Array[String]): Unit = {
     println(" Sorter?: " + isSortedPolymorphic(

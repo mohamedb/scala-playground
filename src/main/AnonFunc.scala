@@ -1,3 +1,5 @@
+package main
+
 object AnonFunc extends App {
 
   override def main(args: Array[String]): Unit = {

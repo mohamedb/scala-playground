@@ -1,3 +1,5 @@
+package main
+
 object Utils {
 
   def formatResult(desc: String, n: Int, f: Int => Int): String = {

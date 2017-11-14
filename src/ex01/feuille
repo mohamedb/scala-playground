@@ -1,0 +1,22 @@
+
+2H30
+
+1-implementer factoriel en utilisant la signature: factorial(to: Int): Int la fonction doit être "tailrec"
+2- .. .. .. fib: fib(n: Int): Int
+3- .. .. .. la composition de deux fn: compose[A, B, C](f: B => C, g: A => B): A => C
+4- .. .. .. la curry fn: curry[A, B, C](f: (A, B) => C): A => (B => C)
+5- verifier si un tableau est ordonné: isSorted[A](arr: Array[A], f: (A, A) => Boolean): Boolean
+6- Synthes
+    soit la déf suivante:
+        sealed trait List[+A]
+        case object Nil extends List[Nothing]
+        case class Cons[+A](head: A, tail: List[A]) extends List[A]
+        et la fonction variadic
+        def apply[A](as: A*): List[A] = {
+              if (as.isEmpty) Nil
+              else Cons(as.head, apply(as.tail: _*))
+            }
+    6.1: implemente la fonction somme et produit
+    6.2: tail qui supprimer le premier element List(1,2,3) => List(2,3)
+    6.3: append qui concatine deux listes List(1,2,3) , List(5,6,7)  => List(2,3,3,5,6,7)
+

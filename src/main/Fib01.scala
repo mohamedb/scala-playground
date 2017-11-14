@@ -1,3 +1,5 @@
+package main
+
 /**
   * Objective: get familiar with loops without using For
   * Should be a 'tail-recursive algorithm'
